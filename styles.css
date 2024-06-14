@@ -1,0 +1,1607 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+}
+
+.loading-content {
+    animation: fadeIn 2.5s ease-in-out infinite alternate;
+    color:#f4f4f4
+}
+
+.school-name {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: slideIn 1.5s ease-in-out infinite alternate;
+}
+
+.slogan {
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: slideIn 1.5s ease-in-out infinite alternate;
+}
+
+.loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.loader .loader-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 8px solid #f4f4f4;
+    border-top: 8px solid maroon;
+    border-radius: 50%;
+    border-bottom: 8px solid maroon;
+    animation: spin 1s linear infinite;
+}
+
+
+.greeting-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    text-align: center;
+    transition: transform 1s ease-in-out;
+}
+
+.greeting-message {
+    background-color: gold;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#greeting-text {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#close-greeting {
+    background-color: gold;
+    color: f4f4f4;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* General Section Container Styles */
+.section-container {
+    display: block; /* Ensure section container is visible */
+    padding: 40px;
+    background-color: gold;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color:#fff;
+    padding-left:10px;
+}
+
+/* Hide all sections initially */
+.section-container section {
+    display: none;
+    background-color: transparent;
+    border: 3px dotted gold;
+    width: 100%;
+    margin-left: 20px;
+    min-height: 100vh;
+}
+
+/* Show active section */
+.section-container section.active {
+    display: block;
+}
+
+@media (max-width: 800px) {
+    header{
+        width:90%
+    }
+    main{
+        width: 90%;
+        height: auto;
+    }
+    .section-container{
+        width: 90%;
+        transform: translate(-30px , 80px);
+        height: auto;
+    }
+    .section-container section{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+
+.our-mission, .our-vision, .our-values {
+    padding: 40px;
+    color: white; /* Assuming you want the text to be white for contrast */
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.our-mission,
+.our-values {
+    position: relative;
+    background: url('bethel-removebg-preview.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.our-mission::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.our-vision {
+    position: relative;
+    background: url('bethel-removebg-preview.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.our-vision::before,
+.our-values::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.our-mission h2 ,
+.our-vision h2,
+.our-values h2{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    animation: fadeIn 3s ease-in-out;
+    font-size: 32px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 800px) {
+    .our-mission, .our-vision, .our-values {
+        padding: 20px;
+        height: auto;
+        min-height: 60vh;
+        margin-top: 10px;
+    }
+
+    .our-mission::before, 
+    .our-vision::before,
+    .our-values::before {
+        background-color: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay for small screens */
+    }
+
+    .our-mission h2,
+    .our-vision h2,
+    .our-values h2 {
+        font-size: 24px;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+header {
+    background: #a52a2a; /* Maroon */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid gold; /* Orange-Brown */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+header .logo img {
+    height: 50px;
+    background-color: #fff;
+}
+
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+    transform: translate(150px, -60px);
+   margin-right: 20px;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background: #8b0000;
+    margin: 5px 0;
+    transition: transform 0.3s;
+   
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: gold; /* Orange-Brown */
+}
+
+
+@media (max-width: 800px) {
+   header h1{
+        font-size: 28px;
+       transform: translateX(-50px);
+        
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header{
+        height: 20vh;
+    }
+    header .logo{
+        transform: translateX(-50px);
+    }
+
+    nav ul {
+        position: absolute;
+        top: 130px;
+        right: 30px;
+        flex-direction: column;
+        background: #000;
+        border: 1px solid gold;
+        border-radius: 8px;
+        padding: 10px;
+        display: none;
+        transition: opacity 0.3s;
+        z-index: 1;
+        text-align: left;
+        flex-direction: column;
+        
+    }
+    
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .menu-toggle.active .menu-icon {
+        transform: rotate(45deg);
+        background: none;
+    }
+
+    .menu-toggle.active .menu-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .menu-icon:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    nav ul li a {
+        padding: 15px 25px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+main {
+    padding: 20px 50px;
+    width: 90%;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+/*----------------------------------------------------------------------------------------------------------------*/
+
+footer {
+    position: relative;
+    background: url('bethel-removebg-preview.png') no-repeat center center/cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    flex-direction: column;
+}
+
+footer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+
+
+footer .footer-info, footer .footer-copy {
+    margin: 0 auto;
+    padding: 10px;
+    z-index: 2;
+}
+
+footer .footer-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+    z-index: 2;
+}
+
+footer .footer-info p strong {
+    display: block;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+
+footer .footer-info p a {
+    color: #ffd700; /* Gold color for the email link */
+    text-decoration: none;
+    z-index: 2;
+}
+
+footer .footer-info p a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-copy {
+    border-top: 1px solid gold;
+    margin-top: 20px;
+    padding-top: 10px;
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    footer{
+        transform: translateY(100px);
+    }
+
+    footer .footer-info {
+        text-align: left;
+        padding: 10px;
+        z-index: 2;
+    }
+
+    footer .footer-copy {
+        text-align: center;
+        z-index: 2;
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Home Section Styles-------------------------------------------------------------------------------------------- */
+.welcome-container {
+    position: relative;
+    background: url('bethel-removebg-preview.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    
+}
+
+.welcome-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.welcome-message {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    animation: fadeIn 3s ease-in-out;
+    
+}
+.bg-shadow{
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border-color: #800000;
+}
+
+.welcome-message h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+.welcome-message p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #a52a2a; /* Maroon */
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #8b0000; /* Darker Maroon */
+    transform: scale(1.05);
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 800px) {
+    .welcome-container{
+        transform: translateY(-40px);
+       
+        
+    }
+    .welcome-message {
+        width: 100%; /* Adjust to fit on smaller screens */
+        height: 50vh;
+        
+    }
+
+    .welcome-message h2 {
+        font-size: 2.5rem; /* Adjust text size for smaller screens */
+        opacity: 1;
+    }
+
+    .welcome-message p {
+        font-size: 1.2rem; /* Adjust text size for smaller screens */
+        text-align: center;
+    }
+
+    .cta-button {
+        padding: 12px 25px; /* Adjust padding for smaller screens */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+    .cta-button{
+        width: 80%;
+    }
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* CSS Animations for slide-up effect */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding the slide-up animation on scroll */
+.welcome-message.slide-up {
+    animation: slideUp 1s ease-in-out forwards;
+}
+/*----------------------------------------------------------------------------------------------------------*/
+
+#videoschool{
+   width: 100%;
+   height: 100%vh;
+   background-color: transparent;
+   margin-top: 30px;
+  
+}
+video {
+    width: 100%;
+    max-width: 97%;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    border-radius: 15px;
+    margin-left: 15px;
+}
+
+#videoschool canvas{
+    display: none;
+}
+
+
+#loadings {
+    display: none;
+    font-size: 20px;
+    color: #800000;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* Fade-in and Fade-out Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s forwards;
+}
+
+.fade-out-down {
+    animation: fadeOutDown 0.6s forwards;
+}
+
+/* Background Image Animation */
+@keyframes bgMove {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+.background-animate {
+    animation: bgMove 10s linear  alternate;
+}
+
+
+
+/* Gallery Section Styles ----------------------------------------------------------------------------------- -----*/
+.gallery {
+    position: relative;
+    background: url('bethel-removebg-preview.png') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.gallery h2 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    z-index: 1;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+   
+    
+}
+
+.gallery-item img {
+    width: 80%;
+    height: auto;
+    display: block;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    margin-left: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery p {
+    color: #fff;
+    z-index: 1;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 20px;
+}
+
+#cta-gallerybutton {
+    z-index: 1;
+    padding: 15px 30px;
+    background-color: #a52a2a; /* Maroon */
+    color: #fff; /* White text color */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#cta-gallerybutton:hover {
+    background-color: #8b0000; /* Darker Maroon */
+    transform: scale(1.05);
+}
+
+.gallery-container .frame-border {
+    border: none;
+    width: 90%;
+    margin-left: 30px;
+    position: relative;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    height: 50vh;
+    transform: translateY(-60px);
+    padding-top: 20px;
+    
+}
+
+.gallery-item:hover .frame-border {
+    border-color: #a52a2a;
+    transform: scale(1.05);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+.gallery-container .frame-border img{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 100%;
+
+}
+.gallery-container .frame-border img:hover{
+    transform: scale(1.1);
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 800px) {
+    .gallery-container {
+        flex-direction: column; /* Adjust to stack images vertically */
+        width: 95%;
+        margin-top: 50px;
+    }
+
+    .gallery-item {
+        width: 100%; /* Adjust width for responsive design */
+        background-color: transparent;
+    }
+    .gallery-item img{
+        width: 100%;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        transform: translateX(-30px);
+    }
+
+    .gallery-item:hover img {
+        opacity: 0;
+    }
+    .gallery-container .frame-border {
+        width: 100%;
+        margin: auto;
+        transform: translateY(10px);
+        height: 50vh;
+        clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+        opacity: 0.4;
+    }
+
+    #cta-gallerybutton{
+        width: 80%;
+    }
+
+    .gallery-container .frame-border img{
+        margin-right: 30px;
+        width: 90%;
+    }
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* General styles */
+.board-message {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: gold;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin-top: 50px;
+   /* background: url('bethel-removebg-preview.png') no-repeat center center/cover;*/
+}
+
+.board-message > div {
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.board-message > div:hover {
+    transform: translateY(-10px);
+}
+
+.director-image img, .asstdirector-image img {
+    width: 30%;
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+    border: 5px solid gold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.board-message h2{
+    font-size: 24px;
+    opacity: 1;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 800px) {
+    .board-message {
+        flex-direction: row;
+        align-items: center;
+        overflow-y:auto ;
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .board-message > div {
+        width: 100%;
+        height: 70vh;
+        overflow-y: scroll;
+        margin-top: 20px;
+    }
+
+    .board-message h2{
+        font-size: 18px;
+    }
+
+    .director-image img, .asstdirector-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+/*------------------------------------------------------------------------------------------------------*/
+
+
+.welcome-about, .welcome-curriculum, .welcome-gallery {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.welcome-about.fade-in,
+.welcome-gallery.fade-in,
+.welcome-curriculum.fade-in{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content,
+.curriculum-content,
+.gallery-content {
+    padding: 40px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.about-header ,
+.academic-header,
+.photos-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+    background: url('bethel-removebg-preview.png') no-repeat center center/cover;
+    height: 45vh;
+    
+    
+}
+
+.about-header h2,
+.academic-header h2,
+.photos-header h2{
+    z-index: 2;
+    font-size: 44px;
+    transform: translate(250px, 100px);
+}
+
+.about-header::before,
+.photos-header::before,
+.academic-header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 87%;
+    height: 52vh;
+    z-index: 1;
+    margin-left: 83px;
+    margin-top: 220px;
+}
+
+.about-header h3,
+.academic-header h3,
+.photos-header h3 {
+   transform: translateX(200px);
+   border-top: 3px solid gold;
+    z-index: 2;
+}
+
+.welcome-about p, .welcome-curriculum p, .welcome-gallery p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+
+}
+
+.welcome-about h4, .welcome-curriculum h4, .welcome-gallery h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.aboutImage-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    
+    margin-left: 20px;
+    height: 50vh;
+}
+
+.aboutImage-container img {
+    width: 300px; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 20px;
+}
+
+.aboutImage-container img:nth-child(1) {
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+
+}
+
+.aboutImage-container img:nth-child(2) {
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+
+}
+
+.aboutImage-container img:nth-child(3) {
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+
+}
+
+/* Add more nth-child selectors if there are more images */
+
+
+.aboutImage-container img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Small screen styles */
+@media (max-width: 768px) {
+    .about-header,
+    .academic-header,
+    .photos-header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        margin-top: 20px;
+        z-index: 2;
+        color: #800000;
+    }
+
+    .about-header h2,
+    .academic-header h2,
+    .photos-header h2 {
+        font-size: 24px;
+        transform: none;
+        text-align: center;
+        margin: 10px 0;
+        color: #800000;
+    }
+
+    .about-header::before,
+    .photos-header::before,
+    .academic-header::before {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .about-header h3,
+    .academic-header h3,
+    .photos-header h3 {
+        transform: none;
+        text-align: center;
+        margin: 10px 0;
+        border-top: none;
+        color: #800000;
+    }
+
+    .about-content,
+    .curriculum-content,
+    .gallery-content {
+        padding: 20px;
+        margin-top: 10px;
+        color: #800000;
+    }
+
+    .welcome-about p, .welcome-curriculum p, .welcome-gallery p {
+        font-size: 1rem;
+        color:#800000;
+    }
+
+    .welcome-about h4, .welcome-curriculum h4, .welcome-gallery h4 {
+        font-size: 1.5rem;
+    }
+
+    .aboutImage-container {
+        gap: 5px;
+        margin-top: 10px;
+        z-index: 2;
+        width: 100%;
+        transform: translateX(-30px);
+        margin-bottom: 50px;
+        color: #8b0000;
+    }
+
+    .aboutImage-container img {
+        width: 120px; /* Adjust as needed */
+        height: 120px; /* Adjust as needed */
+    }
+}
+
+
+/* General container styling */
+.school-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.admin-block, .head-staff, .teaching-staff, .supporting-staff {
+    background: #ccc;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    padding: 20px;
+    color:#000;
+    border: 3px solid gold;
+}
+
+/* Header styling */
+.admin-block h2, .head-staff h2, .teaching-staff h2, .supporting-staff h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styling */
+.admin-block p, .head-staff p, .teaching-staff p, .supporting-staff p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Image container styling */
+.admin-images, .head-staff-images, .teaching-staff-images, .supporting-staff-images, .curriculums-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+/* Image and clip-path styling */
+.admin-images .admin-image img,
+.head-staff-images .staff-image img,
+.teaching-staff-images .staff-image img,
+.supporting-staff-images .staff-image img {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.admin-images .admin-image img:nth-child(1) {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+}
+
+.admin-images .admin-image img:nth-child(2) {
+    clip-path: polygon(0% 10%, 100% 10%, 100% 90%, 0% 90%);
+}
+
+.admin-images .admin-image img:nth-child(3) {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.head-staff-images .staff-image img:nth-child(1) {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.head-staff-images .staff-image img:nth-child(2) {
+    clip-path: ellipse(50% 40% at 50% 50%);
+}
+
+.teaching-staff-images .staff-image img:nth-child(1) {
+    clip-path: polygon(0% 25%, 25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%);
+}
+
+.teaching-staff-images .staff-image img:nth-child(2) {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+}
+
+.teaching-staff-images .staff-image img:nth-child(3) {
+    clip-path: polygon(0% 20%, 20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%);
+}
+
+.teaching-staff-images .staff-image img:nth-child(4) {
+    clip-path: polygon(50% 0%, 100% 25%, 75% 100%, 25% 100%, 0% 25%);
+}
+
+.supporting-staff-images .staff-image img:nth-child(1) {
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+}
+
+.supporting-staff-images .staff-image img:nth-child(2) {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.supporting-staff-images .staff-image img:nth-child(3) {
+    clip-path: polygon(0% 25%, 25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%);
+}
+
+/* Hover effect for all images */
+.admin-images .admin-image img:hover,
+.head-staff-images .staff-image img:hover,
+.teaching-staff-images .staff-image img:hover,
+.supporting-staff-images .staff-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Container for each individual image */
+.admin-images .admin-image,
+.head-staff-images .staff-image,
+.teaching-staff-images .staff-image,
+.supporting-staff-images .staff-image,
+.curriculums-images img  {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.curriculums-images{
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    width: 100%;
+}
+.curriculums-images img{
+    height: 40vh;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+
+}
+#Curriculum p{
+   text-align: center;
+}
+
+#Curriculum button{
+    font-size:30px;
+    background-color: gold;
+    color:#fff;
+    border: none;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#Curriculum button::before:hover{
+    background-color: #8b0000;
+}
+#Curriculum button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for small screens */
+@media only screen and (max-width: 800px) {
+    .school-block {
+        grid-template-columns: 1fr; /* Make each section full width */
+        gap: 10px;
+        z-index: 2;
+    }
+
+    .admin-images, .head-staff-images, .teaching-staff-images, .supporting-staff-images, .curriculums-images {
+        grid-template-columns: 1fr 1fr; /* Adjust the grid for images to have two columns */
+        gap: 5px;
+    }
+
+   
+
+    .admin-images .admin-image img,
+    .head-staff-images .staff-image img,
+    .teaching-staff-images .staff-image img,
+    .supporting-staff-images .staff-image img,
+    .curriculums-images img {
+        width: 80px; /* Reduce the size of the images */
+        height: 80px; /* Reduce the size of the images */
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .admin-block, .head-staff, .teaching-staff, .supporting-staff {
+        padding: 15px; /* Reduce padding for smaller screens */
+        width:100%;
+        margin-right:30px;
+    }
+
+    .admin-block h2, .head-staff h2, .teaching-staff h2, .supporting-staff h2 {
+        font-size: 20px; /* Reduce font size for headers */
+    }
+
+    .admin-block p, .head-staff p, .teaching-staff p, .supporting-staff p {
+        font-size: 14px; /* Reduce font size for paragraphs */
+    }
+}
+
+
+/*===========================================================================================================*/
+
+
+/* General styles */
+.welcome-curriculums ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.welcome-curriculums ul li {
+    padding: 10px;
+    margin: 5px 0;
+}
+
+
+.curriculums-images p {
+    grid-column: span 3; /* Ensures the paragraph spans the entire width of the images */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.curriculums-images button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: gold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.curriculums-images button:hover {
+    background-color: #a0522d;
+}
+
+/* Styles for big screens */
+@media (min-width: 769px) {
+    .welcome-curriculums ul {
+        border: 2px solid gold;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .welcome-curriculums ul li {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .welcome-curriculums ul li:hover {
+        background-color: rgb(48, 21, 21, 0.4);
+        transform: translateX(10px);
+    }
+
+    /* Animation */
+    .welcome-curriculums ul::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8));
+        transition: left 0.75s ease;
+    }
+
+    .welcome-curriculums ul:hover::before {
+        left: 100%;
+    }
+}
+/* Small screen styles */
+@media (max-width: 768px) {
+    .academic-header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .academic-header h2 {
+        font-size: 24px;
+        transform: none;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .academic-header::before {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .academic-header h3 {
+        transform: none;
+        text-align: center;
+        margin: 10px 0;
+        border-top: none;
+    }
+
+    .curriculum-content {
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    .welcome-curriculums p, .welcome-curriculum ul {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .welcome-curriculums h4 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .welcome-curriculums ul {
+        padding-left: 20px;
+        border: none;
+        padding: 0;
+    }
+}
+
+/* General styling for the photos container-------------------------------------------------------------------- */
+.photos-container {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for each gallery image */
+.gallery-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Large screen styling */
+@media (min-width: 769px) {
+    .photos-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Small screen styling */
+@media (max-width: 768px) {
+    .photos-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*==============================================================================================================*/
+
+
+/* General contact section styling */
+#Contact {
+    padding: 20px;
+    background-color: transparent;
+    transform: translateX(-30px);
+}
+
+.contact-header h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid gold;
+    padding-bottom: 10px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.donation-form,
+.newsletter-form,
+.contact-info {
+    background: #ccc;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    padding: 20px;
+    border: 3px solid gold;
+    color: #000;
+    flex: 1;
+}
+
+/* Form input and button styling */
+form input[type="text"],
+form input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid gold;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: gold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+    background: #6d3f12;
+}
+
+/* Contact information styling */
+.contact-info {
+    text-align: left;
+}
+
+.contact-info h3 {
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.contact-content h4{
+    text-align: center;
+    font-size: 30px;
+    margin-left: 350px;
+    width: 90%;
+    text-shadow: rgba(50, 4, 4, 0.792);
+}
+
+@media (max-width: 768px){
+   #contact{
+    display:flex;
+    flex-direction: column;
+   }
+}
