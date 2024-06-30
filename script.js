@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const loadingContainer = document.querySelector(".loading-container");
     const greetingContainer = document.querySelector(".greeting-container");
